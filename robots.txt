@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://floating-navbar-effect.netlify.app/sitemap.xml
