@@ -2,14 +2,14 @@
 
 ![Preview](assets/preview.svg)
 
-A floating navigation bar that compacts on scroll, highlights the active section, and provides an accessible mobile menu.
+A floating navigation bar that morphs while transforming three scenes inside one capture-ready block.
 
 ## Features
 
-- Visual scrolled state.
-- Active section through `IntersectionObserver`.
+- Scene changes through click, wheel, or keyboard.
+- Spring-like active indicator.
 - Mobile menu with Escape, outside click, and focus return.
-- Anchor and keyboard navigation.
+- Complete keyboard navigation.
 
 ## Live demo
 
@@ -25,7 +25,7 @@ Navigation and sections in `index.html`, responsive styling in `style.css`, stat
 
 ## Customization
 
-Add anchors and matching section IDs; adapt `rootMargin` to change active-link timing.
+Add entries to the `content` array, matching `data-scene` buttons, and their visual scene articles.
 
 ## Accessibility
 
@@ -33,7 +33,7 @@ Uses `nav`, `aria-current`, `aria-expanded`, Escape closing, touch targets, and 
 
 ## Performance
 
-Scroll state uses one pending frame and active sections need no continuous geometry calculations.
+Scene transitions animate only `transform` and `opacity`, with a short wheel lock to prevent skips.
 
 ## License and credits
 

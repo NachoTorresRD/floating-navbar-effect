@@ -2,14 +2,14 @@
 
 ![Vista previa](assets/preview.svg)
 
-Barra de navegación flotante que se compacta al desplazarse, marca la sección activa y ofrece menú móvil accesible.
+Barra flotante que cambia de forma mientras transforma tres escenas dentro de un solo bloque.
 
 ## Características
 
-- Estado visual al hacer scroll.
-- Sección activa mediante `IntersectionObserver`.
+- Cambio de escena mediante clic, rueda o teclado.
+- Indicador activo con movimiento spring.
 - Menú móvil con Escape, clic exterior y retorno de foco.
-- Navegación por anclas y teclado.
+- Navegación completa por teclado.
 
 ## Demo en vivo
 
@@ -25,7 +25,7 @@ Navegación y secciones en `index.html`, responsive en `style.css`, estados en `
 
 ## Cómo personalizarlo
 
-Añade anclas y secciones con IDs coincidentes; adapta `rootMargin` para cambiar cuándo se activa cada enlace.
+Añade escenas al arreglo `content`, su botón `data-scene` y el artículo visual correspondiente.
 
 ## Accesibilidad
 
@@ -33,7 +33,7 @@ Usa `nav`, `aria-current`, `aria-expanded`, cierre con Escape, objetivos táctil
 
 ## Rendimiento
 
-El estado de scroll usa un frame pendiente y la sección activa se resuelve sin cálculos continuos.
+El cambio de escena anima solo `transform` y `opacity`, con bloqueo breve de la rueda para evitar saltos.
 
 ## Licencia y créditos
 

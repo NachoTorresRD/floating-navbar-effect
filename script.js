@@ -1,1 +1,31 @@
-"use strict";(()=>{const wrap=document.querySelector("#nav-wrap"),menu=document.querySelector("#menu-button"),links=document.querySelector("#nav-links"),anchors=[...document.querySelectorAll(".nav-links a")],sections=[...document.querySelectorAll("main .section")];if(!wrap||!menu||!links||!anchors.length||!sections.length){console.warn("Floating Navbar: DOM incompleto.");return}let frame=0;const scrollState=()=>{wrap.classList.toggle("scrolled",scrollY>24);frame=0};addEventListener("scroll",()=>{if(!frame)frame=requestAnimationFrame(scrollState)},{passive:true});const close=focusButton=>{links.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.setAttribute("aria-label","Abrir menú");if(focusButton)menu.focus()};menu.addEventListener("click",()=>{const open=!links.classList.contains("open");links.classList.toggle("open",open);menu.setAttribute("aria-expanded",String(open));menu.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú")});anchors.forEach(anchor=>anchor.addEventListener("click",()=>close(false)));document.addEventListener("keydown",event=>{if(event.key==="Escape"&&links.classList.contains("open"))close(true)});document.addEventListener("pointerdown",event=>{if(!wrap.contains(event.target))close(false)});const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;anchors.forEach(anchor=>{const active=anchor.getAttribute("href")===`#${entry.target.id}`;anchor.classList.toggle("active",active);if(active)anchor.setAttribute("aria-current","page");else anchor.removeAttribute("aria-current")})}),{rootMargin:"-38% 0px -55%",threshold:0});sections.forEach(section=>observer.observe(section));scrollState()})();
+"use strict";
+(() => {
+  const demo = document.querySelector("#nav-demo");
+  const scenes = [...document.querySelectorAll(".scene")];
+  const buttons = [...document.querySelectorAll("[data-scene]")];
+  const previous = document.querySelector("#previous");
+  const next = document.querySelector("#next");
+  const menu = document.querySelector("#menu-button");
+  const links = document.querySelector("#nav-links");
+  const number = document.querySelector("#scene-number");
+  const title = document.querySelector("#scene-title");
+  const copy = document.querySelector("#scene-copy");
+  if (!demo || !scenes.length || !buttons.length || !previous || !next || !menu || !links || !number || !title || !copy) return;
+  const content = [{title:"Pulso",copy:"Energía concentrada en el centro."},{title:"Órbita",copy:"Capas que responden al estado activo."},{title:"Núcleo",copy:"Un cierre de alto contraste."}];
+  let active = 0; let wheelLocked = false;
+  const show = index => {
+    active = (index + scenes.length) % scenes.length;
+    demo.classList.remove("scene-0","scene-1","scene-2"); demo.classList.add(`scene-${active}`);
+    scenes.forEach((scene, i) => { const selected = i === active; scene.classList.toggle("active", selected); scene.setAttribute("aria-hidden", String(!selected)); });
+    buttons.forEach((button, i) => { const selected = i === active; button.classList.toggle("active", selected); button.setAttribute("aria-pressed", String(selected)); });
+    number.textContent = String(active + 1).padStart(2,"0"); title.textContent = content[active].title; copy.textContent = content[active].copy;
+    links.classList.remove("open"); menu.setAttribute("aria-expanded","false");
+  };
+  buttons.forEach(button => button.addEventListener("click", () => show(Number(button.dataset.scene))));
+  previous.addEventListener("click", () => show(active - 1)); next.addEventListener("click", () => show(active + 1));
+  demo.addEventListener("wheel", event => { event.preventDefault(); if (wheelLocked || Math.abs(event.deltaY) < 12) return; wheelLocked = true; show(active + (event.deltaY > 0 ? 1 : -1)); window.setTimeout(() => wheelLocked = false, 520); }, { passive:false });
+  demo.addEventListener("keydown", event => { if (!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(event.key)) return; event.preventDefault(); show(active + (["ArrowRight","ArrowDown"].includes(event.key) ? 1 : -1)); });
+  menu.addEventListener("click", () => { const open = !links.classList.contains("open"); links.classList.toggle("open",open); menu.setAttribute("aria-expanded",String(open)); });
+  document.addEventListener("keydown", event => { if (event.key === "Escape") { links.classList.remove("open"); menu.setAttribute("aria-expanded","false"); menu.focus(); } });
+  show(0);
+})();
