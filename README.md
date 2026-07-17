@@ -15,6 +15,12 @@ Barra flotante que cambia de forma mientras transforma tres escenas dentro de un
 
 [navbar.ntdesweb.dev](https://navbar.ntdesweb.dev/)
 
+## Más demos de efectos
+
+- [Spotlight Card](https://spotlight.ntdesweb.dev/)
+- [3D Product Card](https://card3d.ntdesweb.dev/)
+- [Before/After Image Slider](https://fxpreview.ntdesweb.dev/)
+
 ## Instalación
 
 Clona el repositorio, entra en `floating-navbar-effect` y abre `index.html`.

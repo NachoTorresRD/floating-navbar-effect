@@ -15,6 +15,12 @@ A floating navigation bar that morphs while transforming three scenes inside one
 
 [navbar.ntdesweb.dev](https://navbar.ntdesweb.dev/)
 
+## More effect demos
+
+- [Spotlight Card](https://spotlight.ntdesweb.dev/)
+- [3D Product Card](https://card3d.ntdesweb.dev/)
+- [Before/After Image Slider](https://fxpreview.ntdesweb.dev/)
+
 ## Installation
 
 Clone the repository, enter `floating-navbar-effect`, and open `index.html`.
