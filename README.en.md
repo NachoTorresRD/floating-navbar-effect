@@ -13,7 +13,7 @@ A floating navigation bar that morphs while transforming three scenes inside one
 
 ## Live demo
 
-[floating.navbar.effect.ntdesweb.dev](https://floating.navbar.effect.ntdesweb.dev/)
+[navbar.ntdesweb.dev](https://navbar.ntdesweb.dev/)
 
 ## Installation
 

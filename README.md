@@ -13,7 +13,7 @@ Barra flotante que cambia de forma mientras transforma tres escenas dentro de un
 
 ## Demo en vivo
 
-[floating.navbar.effect.ntdesweb.dev](https://floating.navbar.effect.ntdesweb.dev/)
+[navbar.ntdesweb.dev](https://navbar.ntdesweb.dev/)
 
 ## Instalación
 
