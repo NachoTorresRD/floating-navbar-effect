@@ -1,4 +1,33 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Floating Navbar Effect — Navegación que transforma la escena</title><meta name="description" content="Barra flotante compacta con indicador deslizante y escenas reactivas dentro de un solo bloque."><link rel="canonical" href="https://floating-navbar-effect.netlify.app/"><meta property="og:title" content="Floating Navbar Effect"><meta property="og:description" content="Una barra flotante que transforma la escena."><meta property="og:image" content="https://floating-navbar-effect.netlify.app/assets/og-image.svg"><meta property="og:type" content="website"><meta property="og:url" content="https://floating-navbar-effect.netlify.app/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Floating Navbar Effect"><meta name="twitter:description" content="Una barra flotante que transforma la escena."><meta name="twitter:image" content="https://floating-navbar-effect.netlify.app/assets/og-image.svg"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="cross-promo.css"><script src="script.js" defer></script></head>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Floating Navbar Effect — Navegación que transforma la escena</title>
+<meta name="description" content="Barra flotante compacta con indicador deslizante y escenas reactivas dentro de un solo bloque.">
+<link rel="canonical" href="https://navbar.ntdesweb.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NTDESWEB FX">
+<meta property="og:locale" content="es_DO">
+<meta property="og:title" content="Floating Navbar Effect">
+<meta property="og:description" content="Una barra flotante que transforma la escena.">
+<meta property="og:url" content="https://navbar.ntdesweb.dev/">
+<meta property="og:image" content="https://navbar.ntdesweb.dev/assets/social-preview.png">
+<meta property="og:image:secure_url" content="https://navbar.ntdesweb.dev/assets/social-preview.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Barra de navegación flotante sobre una escena interactiva luminosa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Floating Navbar Effect">
+<meta name="twitter:description" content="Una barra flotante que transforma la escena.">
+<meta name="twitter:image" content="https://navbar.ntdesweb.dev/assets/social-preview.png">
+<meta name="twitter:image:alt" content="Barra de navegación flotante sobre una escena interactiva luminosa">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cross-promo.css">
+<script src="script.js" defer></script>
+</head>
 <body><a class="skip" href="#nav-demo">Saltar a la demostración</a><header><a href="https://github.com/NachoTorresRD" target="_blank" rel="noreferrer"><b>NT</b> Nav Lab</a><span>09 / 10</span></header>
 <main><section class="intro" aria-labelledby="title"><p>Floating nav / scene switcher</p><h1 id="title">Flota. Reacciona.<br><em>Te guía.</em></h1><span>Haz clic, usa las flechas o gira la rueda sobre la escena. La barra cambia de forma mientras el contenido se transforma.</span><div class="nav-readout" aria-live="polite"><span id="scene-number">01</span><p><strong id="scene-title">Pulso</strong><small id="scene-copy">Energía concentrada en el centro.</small></p></div><div class="scene-controls"><button id="previous" type="button" aria-label="Escena anterior">←</button><button id="next" type="button" aria-label="Escena siguiente">Siguiente escena →</button></div></section>
 <section class="nav-demo" id="nav-demo" tabindex="0" aria-label="Escenario interactivo de navegación flotante"><nav class="floating-nav" aria-label="Selector de escena"><a class="logo" href="https://github.com/NachoTorresRD" target="_blank" rel="noreferrer" aria-label="NachoTorresRD"><b>NT</b><span>NAV LAB</span></a><div class="nav-links" id="nav-links"><i class="active-pill" aria-hidden="true"></i><button type="button" data-scene="0" class="active" aria-pressed="true">Pulso</button><button type="button" data-scene="1" aria-pressed="false">Órbita</button><button type="button" data-scene="2" aria-pressed="false">Núcleo</button></div><button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir selector"><span></span><span></span><span></span></button></nav>
